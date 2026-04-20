@@ -125,8 +125,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
   position:absolute;inset:-6px;
   border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
   background:linear-gradient(135deg, var(--red) 0%, transparent 40%, var(--red) 80%);
- animation:morphspin 6s linear infinite;
-border-radius:50%;
+  animation:morphspin 6s linear infinite;
   z-index:0;
 }
 @keyframes morphspin{
@@ -139,10 +138,9 @@ border-radius:50%;
 
 .hex-inner{
   position:absolute;inset:6px;
- border-radius:50%;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
   overflow:hidden;
-animation:none;
-border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation:morphframe 6s linear infinite;
   z-index:1;
   background:var(--blk3);
 }
@@ -158,19 +156,16 @@ border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
   width:100%;height:100%;
   object-fit:cover;object-position:top center;
   display:block;
-  /* counter-rotate so the image stays upright */
-  animation:counterrotate 6s linear infinite;
+  transform:scale(1.1);
 }
-@keyframes counterrotate{
-  0%{transform:rotate(0deg) scale(1.08)}
+
   50%{transform:rotate(-180deg) scale(1.08)}
   100%{transform:rotate(-360deg) scale(1.08)}
 }
 
 /* Pause animation on hover for a polished feel */
 .hex-outer:hover .hex-ring,
-.hex-outer:hover .hex-inner,
-.hex-outer:hover .hex-inner img{
+.hex-outer:hover .hex-inner{
   animation-play-state:paused;
 }
 
@@ -260,7 +255,7 @@ border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
 
 /* TEACHING STRIP */
 .teach-wrap{position:relative;overflow:hidden;background:var(--blk2)}
-.teach-wrap img{width:100%;height:clamp(260px,35vw,520px);object-fit:cover;object-position:center 28%;display:block;opacity:.85}
+.teach-wrap img{width:100%;height:clamp(260px,35vw,520px);object-fit:cover;object-position:center 30%;display:block;opacity:.85;max-width:100%}
 .teach-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.78) 0%,transparent 22%,transparent 75%,rgba(10,10,10,.78) 100%),linear-gradient(to top,rgba(10,10,10,.45) 0%,transparent 42%);z-index:2;pointer-events:none}
 .teach-wrap::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--red);z-index:3}
 .teach-label{position:absolute;bottom:clamp(12px,2.2vw,32px);left:50%;transform:translateX(-50%);z-index:4;background:rgba(8,8,8,.9);border:1px solid rgba(200,16,46,.35);border-left:4px solid var(--red);padding:clamp(9px,1.3vw,15px) clamp(16px,2.2vw,32px);font-family:'Barlow Condensed',sans-serif;font-size:clamp(11px,1.2vw,15px);font-weight:700;letter-spacing:3px;text-transform:uppercase;white-space:nowrap}
@@ -271,7 +266,7 @@ border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
 .spk-sec{background:var(--blk2);border-top:1px solid rgba(200,16,46,.2);border-bottom:1px solid rgba(200,16,46,.2)}
 .spk-inner{display:grid;grid-template-columns:clamp(200px,24vw,360px) 1fr;gap:clamp(28px,4.5vw,72px);align-items:center;max-width:1140px;margin:0 auto;padding:clamp(50px,7vw,100px) clamp(20px,6vw,80px)}
 .spk-photo{position:relative}
-.spk-photo img{width:100%;display:block;object-fit:cover;object-position:top center;aspect-ratio:3/4;border:2px solid rgba(200,16,46,.2)}
+.spk-photo img{width:100%;display:block;object-fit:cover;object-position:top center;aspect-ratio:3/4;border:2px solid rgba(200,16,46,.2);max-width:100%;height:auto}
 .spk-acc1{position:absolute;bottom:-10px;right:-10px;width:60px;height:60px;background:var(--red);z-index:-1}
 .spk-acc2{position:absolute;top:-10px;left:-10px;width:34px;height:34px;border:3px solid var(--red);z-index:-1}
 .spk-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,4.2vw,58px);letter-spacing:3px;line-height:1;margin-bottom:6px}
@@ -392,10 +387,10 @@ footer{background:var(--blk2);border-top:1px solid rgba(200,16,46,.2);padding:cl
 <section class="hero">
   <div class="hero-line-left"></div>
   <div class="hero-line-right"></div>
-  <div class="hero-bg-txt">FROM ZERO TO REAL ESTATE</div>
+  <div class="hero-bg-txt">ZERO TO REAL ESTATE</div>
 
   <div class="hero-content">
-    <div class="eyebrow">Zero to Real Estate &middot; May 5, 2026</div>
+    <div class="eyebrow">Zero to Real Estate &middot; Tuesday, May 5, 2026</div>
 
     <h1 class="hero-title">FROM <span class="acc">ZERO</span><br>TO REAL ESTATE</h1>
     <p class="hero-sub">The Blueprint They Don't Teach You</p>
@@ -511,7 +506,7 @@ footer{background:var(--blk2);border-top:1px solid rgba(200,16,46,.2);padding:cl
       <div class="success" id="successState">
         <div class="suc-ico">&#10003;</div>
         <h3 class="suc-h">You Are Registered!</h3>
-        <p class="suc-m">Thank you for signing up for Zero to Real Estate.<br>Our team will get back to you soon with confirmation and everything you need.<br><br>Get ready. May 5 at 5:00 PM 2026 is going to be something special.</p>
+        <p class="suc-m">Thank you for signing up for Zero to Real Estate.<br>Our team will get back to you soon with confirmation and everything you need.<br><br>Get ready. Tuesday, May 5 at 5:00 PM EDT 2026 is going to be something special.</p>
       </div>
       <form id="webinarForm">
 
